@@ -5,91 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahtain | Food Rescue UAE</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <div class="logo">Sahtain <span>♻️</span></div>
+        <div class="logo">Sahtain <span style="color:#E67E22;">♻️</span></div>
         <div class="nav-links">
             <a href="#how-it-works">How it Works</a>
-            <a href="#pickup">Schedule Pickup</a>
             <a href="#impact">Our Impact</a>
+            <a href="#pickup" class="btn-nav">Schedule Pickup</a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header>
-        <div class="hero-content">
-            <h1>Don't Bin It. Share It.</h1>
-            <p>We collect your excess fresh food and deliver it to those in need across Abu Dhabi.</p>
-            <div class="hero-btns">
-                <button class="btn-primary" onclick="document.getElementById('pickup').scrollIntoView()">Request a Pickup Truck</button>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Don't Bin It. <span class="highlight">Share It.</span></h1>
+                <p>The UAE's first on-demand food rescue service. We collect your surplus fresh food and deliver it to those in need.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary" onclick="document.getElementById('pickup').scrollIntoView()">Request a Truck <i class="fas fa-truck"></i></button>
+                    <button class="btn-secondary" onclick="document.getElementById('how-it-works').scrollIntoView()">Learn More</button>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- How It Works -->
     <section id="how-it-works">
         <div class="container">
-            <h3>How Sahtain Works</h3>
+            <h3 class="section-title">How Sahtain Works</h3>
             <div class="feature-grid">
-                <div class="feature">
+                <div class="feature-card">
+                    <i class="fas fa-camera"></i>
                     <h4>1. Snap</h4>
-                    <p>Take a photo of your surplus food (must be untouched & hygienic).</p>
+                    <p>Take a photo of your surplus food. We accept fresh, untouched meals and packaged goods.</p>
                 </div>
-                <div class="feature">
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
                     <h4>2. Schedule</h4>
-                    <p>Set your location and preferred pickup time in the app.</p>
+                    <p>Set your location and preferred pickup time. Our app matches you with the nearest driver.</p>
                 </div>
-                <div class="feature">
-                    <h4>3. We Collect</h4>
-                    <p>Our temperature-controlled vans pick it up and deliver to UAE Food Bank centers.</p>
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>3. We Deliver</h4>
+                    <p>Our temperature-controlled vans deliver directly to UAE Food Bank distribution centers.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Our Impact (Fixed Section) -->
+    <section id="impact">
+        <div class="container">
+            <h3 class="section-title">Why It Matters</h3>
+            <p class="section-subtitle">Food waste is not just a social issue; it's an environmental crisis.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="circle">38%</div>
+                    <p>of food prepared daily in the UAE is wasted.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="circle">60%</div>
+                    <p>Increase in food waste during Ramadan.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="circle">AED 6bn</div>
+                    <p>Annual economic loss due to food waste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickup Form (The Core Feature) -->
     <section id="pickup">
         <div class="container">
-            <h3>Schedule Your Food Pickup</h3>
-            <p>Help us reach our goal of 0% waste.</p>
-            
-            <div class="calculator-box">
-                <label>Pickup Location (Area)</label>
-                <select id="location">
-                    <option value="abudhabi">Abu Dhabi City</option>
-                    <option value="khalifa">Khalifa City</option>
-                    <option value="yas">Yas Island</option>
-                </select>
-
-                <label>Food Type</label>
-                <select id="foodType">
-                    <option value="dry">Dry/Packaged Goods (Canned, Rice bags)</option>
-                    <option value="cooked">Fresh Cooked Meals (Events/Ramadan)</option>
-                    <option value="bakery">Bakery Items</option>
-                </select>
-
-                <label>Approximate Quantity (Meals)</label>
-                <input type="number" id="mealCount" placeholder="e.g., 20 meals" min="5">
-
-                <div class="safety-check">
-                    <input type="checkbox" id="safetyCheck">
-                    <label for="safetyCheck">I certify this food is fresh, untouched, and packed hygienically.</label>
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h3>Schedule Your Pickup</h3>
+                    <p>Join the Zero Waste movement today.</p>
                 </div>
+                
+                <div class="calculator-box">
+                    <!-- Location Dropdown -->
+                    <div class="input-group">
+                        <label><i class="fas fa-map-pin"></i> Pickup Location</label>
+                        <select id="location">
+                            <option value="" disabled selected>Select your City / Area</option>
+                            <optgroup label="Abu Dhabi Emirate">
+                                <option value="abudhabi">Abu Dhabi City</option>
+                                <option value="alain">Al Ain</option>
+                                <option value="aldhafra">Al Dhafra Region</option>
+                            </optgroup>
+                            <optgroup label="Dubai Emirate">
+                                <option value="dubai">Dubai City</option>
+                                <option value="hatta">Hatta</option>
+                            </optgroup>
+                            <optgroup label="Sharjah Emirate">
+                                <option value="sharjah">Sharjah City</option>
+                                <option value="khorfakkan">Khor Fakkan</option>
+                                <option value="kalba">Kalba</option>
+                            </optgroup>
+                            <optgroup label="Northern Emirates">
+                                <option value="ajman">Ajman</option>
+                                <option value="uaq">Umm Al Quwain</option>
+                                <option value="rak">Ras Al Khaimah</option>
+                                <option value="fujairah">Fujairah</option>
+                            </optgroup>
+                        </select>
+                    </div>
 
-                <button onclick="schedulePickup()">Confirm Pickup</button>
+                    <!-- Food Type -->
+                    <div class="input-group">
+                        <label><i class="fas fa-utensils"></i> Food Type</label>
+                        <select id="foodType">
+                            <option value="cooked">Fresh Cooked Meals (Events/Gatherings)</option>
+                            <option value="dry">Dry/Packaged Goods (Canned, Rice bags)</option>
+                            <option value="bakery">Bakery & Bread</option>
+                            <option value="fruits">Fruits & Vegetables</option>
+                        </select>
+                    </div>
 
-                <div id="confirmation" class="result-hidden">
-                    <h4>🛻 Truck Dispatched!</h4>
-                    <p>Thank you, <span id="userArea"></span>!</p>
-                    <p>We have alerted a driver. Estimated arrival: <strong>45 Minutes</strong>.</p>
-                    <p class="eco-note">You just saved <span id="kgSaved">0</span> kg of food from the landfill!</p>
+                    <!-- Quantity -->
+                    <div class="input-group">
+                        <label><i class="fas fa-box-open"></i> Quantity (Approx. Meals)</label>
+                        <input type="number" id="mealCount" placeholder="Min 5 meals" min="5">
+                    </div>
+
+                    <!-- Safety Check -->
+                    <div class="safety-check">
+                        <input type="checkbox" id="safetyCheck">
+                        <label for="safetyCheck">I certify that this food is fresh, untouched, and packed hygienically.</label>
+                    </div>
+
+                    <button class="btn-submit" onclick="schedulePickup()">Confirm Pickup</button>
+
+                    <!-- Success Message -->
+                    <div id="confirmation" class="result-hidden">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h4>Truck Dispatched!</h4>
+                        <p>Heading to: <strong id="userArea"></strong></p>
+                        <p>Estimated Arrival: <strong>45 Minutes</strong></p>
+                        <div class="eco-badge">
+                            🌍 You just diverted <span id="kgSaved">0</span> kg from the landfill!
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Sahtain. Logistics Partner of the UAE Food Bank.</p>
+        <p>&copy; 2025 Sahtain. Supporting UN SDG 12 & The UAE Food Bank.</p>
     </footer>
 
     <script src="script.js"></script>
