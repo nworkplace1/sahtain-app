@@ -3,126 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahtain | Smart Portioning for the UAE</title>
+    <title>Sahtain | Food Rescue UAE</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="logo">Sahtain <span>🇦🇪</span></div>
+        <div class="logo">Sahtain <span>♻️</span></div>
         <div class="nav-links">
-            <a href="#problem">The Challenge</a>
-            <a href="#demo">Try the Calculator</a>
-            <a href="#team">Team</a>
-            <a href="#" class="btn-download">Get the App</a>
+            <a href="#how-it-works">How it Works</a>
+            <a href="#pickup">Schedule Pickup</a>
+            <a href="#impact">Our Impact</a>
         </div>
     </nav>
 
     <header>
         <div class="hero-content">
-            <h1>Generosity, Redefined.</h1>
-            <h2>Zero Waste. Zero Guilt.</h2>
-            <p>The UAE's first AI-driven portioning tool designed to honor hospitality while protecting our environment.</p>
+            <h1>Don't Bin It. Share It.</h1>
+            <p>We collect your excess fresh food and deliver it to those in need across Abu Dhabi.</p>
             <div class="hero-btns">
-                <button class="btn-primary" onclick="document.getElementById('demo').scrollIntoView()">Try Live Demo</button>
-                <button class="btn-secondary">Watch Video</button>
+                <button class="btn-primary" onclick="document.getElementById('pickup').scrollIntoView()">Request a Pickup Truck</button>
             </div>
         </div>
     </header>
 
-    <section id="problem">
+    <section id="how-it-works">
         <div class="container">
-            <h3>Why Sahtain?</h3>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h4>38%</h4>
-                    <p>of food prepared daily in the UAE is wasted.</p>
-                </div>
-                <div class="stat-card">
-                    <h4>60%</h4>
-                    <p>Increase in food waste during Ramadan.</p>
-                </div>
-                <div class="stat-card">
-                    <h4>AED 6bn</h4>
-                    <p>Annual economic loss due to food waste.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="demo">
-        <div class="container">
-            <h3>AI Portion Calculator Demo</h3>
-            <p>Don't guess. Know exactly what to buy.</p>
-            
-            <div class="calculator-box">
-                <label>What are you cooking?</label>
-                <select id="dishType">
-                    <option value="machboos">Chicken Machboos</option>
-                    <option value="biryani">Lamb Biryani</option>
-                    <option value="harees">Harees</option>
-                </select>
-
-                <label>How many guests?</label>
-                <input type="number" id="guestCount" placeholder="e.g., 5" min="1">
-
-                <button onclick="calculateFood()">Calculate Ingredients</button>
-
-                <div id="result" class="result-hidden">
-                    <h4>You need exactly:</h4>
-                    <p id="riceOutput">🍚 Rice: --</p>
-                    <p id="meatOutput">🍗 Meat: --</p>
-                    <p class="eco-note">🌱 By cooking this exact amount, you save approx AED <span id="moneySaved">0</span> and prevent waste!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features">
-        <div class="container">
-            <h3>How It Works</h3>
+            <h3>How Sahtain Works</h3>
             <div class="feature-grid">
                 <div class="feature">
-                    <h4>1. Plan Smart</h4>
-                    <p>Input your guest list. Let our AI calculate the exact ingredients needed.</p>
+                    <h4>1. Snap</h4>
+                    <p>Take a photo of your surplus food (must be untouched & hygienic).</p>
                 </div>
                 <div class="feature">
-                    <h4>2. Cook & Host</h4>
-                    <p>Host generous feasts without the stress of leftovers or shortages.</p>
+                    <h4>2. Schedule</h4>
+                    <p>Set your location and preferred pickup time in the app.</p>
                 </div>
                 <div class="feature">
-                    <h4>3. Share Surplus</h4>
-                    <p>Have extra? One tap locates the nearest University Sharing Corner.</p>
+                    <h4>3. We Collect</h4>
+                    <p>Our temperature-controlled vans pick it up and deliver to UAE Food Bank centers.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="team">
+    <section id="pickup">
         <div class="container">
-            <h3>The Team</h3>
-            <p>Team 2 - HUM 3011 Final Project</p>
-            <div class="team-grid">
-                <div class="member">
-                    <h4>Naser Almenhali</h4>
-                    <p>Discovery & Empathy</p>
+            <h3>Schedule Your Food Pickup</h3>
+            <p>Help us reach our goal of 0% waste.</p>
+            
+            <div class="calculator-box">
+                <label>Pickup Location (Area)</label>
+                <select id="location">
+                    <option value="abudhabi">Abu Dhabi City</option>
+                    <option value="khalifa">Khalifa City</option>
+                    <option value="yas">Yas Island</option>
+                </select>
+
+                <label>Food Type</label>
+                <select id="foodType">
+                    <option value="dry">Dry/Packaged Goods (Canned, Rice bags)</option>
+                    <option value="cooked">Fresh Cooked Meals (Events/Ramadan)</option>
+                    <option value="bakery">Bakery Items</option>
+                </select>
+
+                <label>Approximate Quantity (Meals)</label>
+                <input type="number" id="mealCount" placeholder="e.g., 20 meals" min="5">
+
+                <div class="safety-check">
+                    <input type="checkbox" id="safetyCheck">
+                    <label for="safetyCheck">I certify this food is fresh, untouched, and packed hygienically.</label>
                 </div>
-                <div class="member">
-                    <h4>Abdulaziz Alobeidli</h4>
-                    <p>Operations & Innovation</p>
-                </div>
-                <div class="member">
-                    <h4>Salem Aljaberi</h4>
-                    <p>Strategy & Business Model</p>
+
+                <button onclick="schedulePickup()">Confirm Pickup</button>
+
+                <div id="confirmation" class="result-hidden">
+                    <h4>🛻 Truck Dispatched!</h4>
+                    <p>Thank you, <span id="userArea"></span>!</p>
+                    <p>We have alerted a driver. Estimated arrival: <strong>45 Minutes</strong>.</p>
+                    <p class="eco-note">You just saved <span id="kgSaved">0</span> kg of food from the landfill!</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Sahtain. Supporting UN SDG 12 & The UAE Food Bank.</p>
+        <p>&copy; 2025 Sahtain. Logistics Partner of the UAE Food Bank.</p>
     </footer>
 
     <script src="script.js"></script>
